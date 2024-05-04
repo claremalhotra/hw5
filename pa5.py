@@ -6,15 +6,17 @@ Created on Sat May  4 15:53:15 2024
 @author: claremalhotra
 """
 
+
 def gcd(a, b):
     """
     This function calculates the greatest common divisor between two numbers
     """
-    x = [a,b]
+    x = [a, b]
     a2, b2 = sorted(x)
     if b == 0:
         return a
     return gcd(b, a % b)
+
 
 def remove_pairs(dir_string):
     """
@@ -41,6 +43,7 @@ def remove_pairs(dir_string):
     else:
         return dir_string
 
+
 def bisection_root(fn, x1, x2):
     """
     This function calculates the root of a function given x values on either
@@ -49,7 +52,7 @@ def bisection_root(fn, x1, x2):
     if fn(x1) > 0 and fn(x2) > 0:
         raise ValueError("Both y values cannot be positive")
     if fn(x1) < 0 and fn(x2) < 0:
-         raise ValueError("Both y values cannot be negative")
+        raise ValueError("Both y values cannot be negative")
     if abs(fn(x1)) <= 10**-7:
         return x1
     if abs(fn(x2)) <= 10**-7:
@@ -67,4 +70,3 @@ def bisection_root(fn, x1, x2):
             else:
                 x4 = x2
         return bisection_root(fn, x3, x4)
-    
